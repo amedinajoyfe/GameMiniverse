@@ -1,6 +1,9 @@
 header{
     background-color: rgb(147, 212, 63);
     outline: 5px green solid;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 nav{
     padding: 5px;
@@ -33,4 +36,13 @@ nav > div >div{
 }
 #profilePic img{
     width: 100%;
+}
+
+#achievements{
+    position: fixed;
+    left: 0;
+    width: 20vw;
+    height: 100%;
+    background-color: darkgray;
+    outline: 5px gray solid;
 }
