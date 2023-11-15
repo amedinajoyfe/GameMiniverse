@@ -1,0 +1,36 @@
+header{
+    background-color: rgb(147, 212, 63);
+    outline: 5px green solid;
+}
+nav{
+    padding: 5px;
+    padding-bottom: 0;
+    display: flex;
+    position: relative;
+}
+nav > h1{
+    font-size: 4vw;
+    line-height: 5.5vw;
+    margin-left: 20px;
+}
+nav > div{
+    display: inline;
+    margin-left: auto;
+    display: flex;
+}
+nav > div >div{
+    line-height: 2.5vw;
+    margin-right: 20px;
+}
+
+#nombre, #nivel{
+    font-size: min(2vw, 30px);
+}
+
+#profilePic{
+    background-color: white;
+    outline: 2px black solid;
+}
+#profilePic img{
+    width: 100%;
+}

@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "Balsamic Sans";
+    src: url("../assets/fonts/BalsamiqSans-Regular.ttf");
+}
+@font-face {
+    font-family: "Balsamic Sans";
+    src: url("../assets/fonts/BalsamiqSans-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Balsamic Sans";
+    src: url("../assets/fonts/BalsamiqSans-Italic.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Balsamic Sans";
+    src: url("../assets/fonts/BalsamiqSans-BoldItalic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Italic.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-BoldItalic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    position: static;
+}
+
+h1, h2{
+    font-family: "Balsamic Sans";
+}
+
+h3, h4, h5, h6, p{
+    font-family: "Poppins";
+}
+
+.smallRoundImage{
+    border-radius: 3vw;
+    width: 5vw;
+    height: 5vw;
+    margin: 0;
+}
