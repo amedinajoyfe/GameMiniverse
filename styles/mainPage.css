@@ -12,8 +12,8 @@ nav{
     position: relative;
 }
 nav > h1{
-    font-size: 4vw;
-    line-height: 5.5vw;
+    font-size: min(4vw, 60px);
+    line-height: min(5.5vw, 80px);
     margin-left: 20px;
 }
 nav > div{
@@ -34,15 +34,31 @@ nav > div >div{
     background-color: white;
     outline: 2px black solid;
 }
-#profilePic img{
-    width: 100%;
-}
 
-#achievements{
+#achievementsSection{
     position: fixed;
     left: 0;
-    width: 20vw;
+    width: min(15vw, 235px);
     height: 100%;
     background-color: darkgray;
     outline: 5px gray solid;
+    padding-top: min(10vw, 120px);
+}
+.achievementRow{
+    display: flex;
+    margin-bottom: 5vw;
+}
+.achievement{
+    margin-left: 1.5vw;
+}
+#info
+{
+    bottom: -20px;
+    left: 0.5vw;
+    width: min(25vw, 250px);
+    height: 100px;
+    position: absolute;
+}
+#info h3{
+    font-size: max(0.7vw, 0.9vw);
 }

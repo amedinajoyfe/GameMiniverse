@@ -46,6 +46,9 @@
     font-size: 10px;
     position: static;
 }
+img{
+    width: 100%;
+}
 
 h1, h2{
     font-family: "Balsamic Sans";
@@ -59,8 +62,8 @@ h3, h4, h5, h6, p{
     margin: 0;
 }
 .smallRoundImage{
-    width: 5vw;
-    height: 5vw;
+    width: min(5vw, 75px);
+    height: min(5vw, 75px);
 }
 .bigRoundImage{
     width: 10vw;
