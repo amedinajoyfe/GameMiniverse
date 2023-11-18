@@ -46,6 +46,16 @@
     font-size: 10px;
     position: static;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: black;
+}
+ul, ol{
+    list-style: none;
+}
 img{
     width: 100%;
 }
@@ -69,6 +79,12 @@ h3, h4, h5, h6, p{
     width: 10vw;
     height: 10vw;
 }
+.smallFixedRoundImage{
+    min-width: 75px;
+    min-height: 75px;
+    max-width: 75px;
+    max-height: 75px;
+}
 
 .depth0{
     z-index: 0;
@@ -78,4 +94,17 @@ h3, h4, h5, h6, p{
 }
 .depth20{
     z-index: 20;
+}
+
+#gameInfo{
+    display: flex;
+    padding: 10px;
+}
+#gameInfo h1{
+    font-size: 40px;
+    margin-left: auto;
+}
+.backArrow{
+    min-width: 100px;
+    height: 50px;
 }
