@@ -85,6 +85,12 @@ h3, h4, h5, h6, p{
     max-width: 75px;
     max-height: 75px;
 }
+.blockedImage{
+    filter: brightness(60%);
+}
+.visible{
+    visibility: hidden;
+}
 
 .depth0{
     z-index: 0;

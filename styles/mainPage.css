@@ -44,6 +44,18 @@ nav > div >div{
     outline: 5px gray solid;
     padding-top: min(8.5vw, 120px);
 }
+#blockImage{
+    background-color: white;
+    background-image: url("../assets/images/AchievementLock.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: min(15vw, 235px);
+    height: 100%;
+    position: fixed;
+    filter: opacity(70%);
+}
+
 .achievementRow{
     display: flex;
     margin-bottom: 3vw;
@@ -89,4 +101,5 @@ nav > div >div{
 .gameHeader h1{
     text-wrap: wrap;
     font-size: 32px;
+    margin: auto;
 }
