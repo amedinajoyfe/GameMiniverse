@@ -6,7 +6,7 @@ header{
     width: 100%;
 }
 nav{
-    padding: 5px;
+    padding: 10px;
     padding-bottom: 0;
     display: flex;
     position: relative;
@@ -38,11 +38,13 @@ nav > div >div{
 #achievementsSection{
     position: fixed;
     left: 0;
-    width: min(15vw, 235px);
+    /* width: min(15vw, 235px); */
+    width: 235px;
     height: 100%;
     background-color: darkgray;
     outline: 5px gray solid;
-    padding-top: min(8.5vw, 120px);
+    /* padding-top: min(8.5vw, 120px); */
+    padding-top: min(12vw, 120px);
 }
 #blockImage{
     background-color: white;
@@ -50,7 +52,8 @@ nav > div >div{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: min(15vw, 235px);
+    /* width: min(15vw, 235px); */
+    width: 235px;
     height: 100%;
     position: fixed;
     filter: opacity(70%);
@@ -58,10 +61,10 @@ nav > div >div{
 
 .achievementRow{
     display: flex;
-    margin-bottom: 3vw;
+    margin-bottom: 30px;
 }
 .achievement{
-    margin-left: 1.5vw;
+    margin-left: 30px;
 }
 #info
 {
@@ -72,34 +75,59 @@ nav > div >div{
     position: fixed;
 }
 #info h3{
-    font-size: max(0.7vw, 0.9vw);
+    font-size: 14px;
 }
 
 #games{
-    width: 80vw;
-    margin-top: 8vw;
-    margin-left: 18vw;
-    padding-top: 1px;
+    max-width: 85vw;
+    margin-top: 6vw;
+    margin-left: 260px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.gamesColumn{
+    flex: 25%;
+    max-width: 25%;
 }
 .game{
-    display: inline-block;
     background-color: red;
-    height: 100%;
-    min-width: 350px;
-    min-height: 350px;
+    height: 50%;
     border-radius: 10px;
-    margin: 5px;
+    outline: solid 4px black;
+    margin: 14px 8px;
+    height: 20vw;
+    min-height: 300px;
 }
 .gameHeader{
     padding: 5px;
     height: 85px;
-    max-width: 350px;
     background-color: blueviolet;
     display: flex;
     border-radius: 10px;
+    text-align: center;
 }
 .gameHeader h1{
-    text-wrap: wrap;
-    font-size: 32px;
+    font-size: min(5vw, 32px);
     margin: auto;
 }
+
+@media (max-width: 1500px){
+    .gamesColumn{
+        flex: 33%;
+        max-width: 33%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .gamesColumn {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+
+@media (max-width: 800px) {
+    .gamesColumn {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }

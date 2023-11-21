@@ -1,11 +1,14 @@
 html,body { height:100%; }
 .target{
     background-color: orangered;
+    background-image: url("../assets/images/target.png");
+    background-size: contain;
     border-radius: 50%;
     animation: targetAnimation;
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
+    position: absolute;
 }
 .target:hover{
     cursor: pointer;
@@ -16,8 +19,10 @@ header{
 }
 #gameZone{
     background-color: aqua;
+    outline: solid 4px blue;
     width: 100%;
     height: 90%;
+    position: relative;
 }
 
 @keyframes targetAnimation{
