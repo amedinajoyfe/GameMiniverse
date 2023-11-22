@@ -14,15 +14,42 @@ html,body { height:100%; }
     cursor: pointer;
 }
 header{
-    line-height: 8vh;
-    height: 10vh;
+    line-height: 60px;
+    height: 80px;
 }
 #gameZone{
-    background-color: aqua;
+    background-color: lightblue;
     outline: solid 4px blue;
     width: 100%;
     height: 90%;
     position: relative;
+}
+#finishScreen{
+    width: 400px;
+    height: 250px;
+    background-color: rgb(215, 215, 91);
+    border: 3px dashed black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#finishScreen h1{
+    display: inline;
+    align-self: center;
+    font-size: 38px;
+}
+#finishScreen input{
+    align-self: center;
+    width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 38px;
 }
 
 @keyframes targetAnimation{

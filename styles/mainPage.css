@@ -107,7 +107,7 @@ nav > div >div{
     text-align: center;
 }
 .gameHeader h1{
-    font-size: min(5vw, 32px);
+    font-size: min(4vw, 32px);
     margin: auto;
 }
 
