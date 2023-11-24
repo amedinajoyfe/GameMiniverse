@@ -121,3 +121,36 @@ h3, h4, h5, h6, p{
     min-width: 100px;
     height: 50px;
 }
+#finishScreen{
+    width: 400px;
+    height: 250px;
+    background-color: rgb(215, 215, 91);
+    border: 3px dashed black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+    visibility: hidden;
+}
+#finishScreen h1{
+    display: inline;
+    align-self: center;
+    font-size: 38px;
+}
+#finishScreen input{
+    align-self: center;
+    width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 38px;
+}
+#btnBckToTitle{
+    background-color: plum;
+    border-radius: 10px;
+}

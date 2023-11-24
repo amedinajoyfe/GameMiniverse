@@ -1,7 +1,10 @@
 let points = 0;
 let missed = 0;
 let speed = 2600;
-let limit = 600;
+const limit = 600;
+const speedIncrease = 200;
+const cricleAnimSpeed = 2000;
+const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
 
 $(document).ready(() =>  {
     setTimeout(createCircle, speed);  //Mirar setTimeOut vs setInterval para las funciones
@@ -19,19 +22,23 @@ function createCircle(){
         if(missed <= 3)
             $("#missed").html("Fallos: " + missed);
         myCircle.remove();
-    }, 2000, newDiv);
+    }, cricleAnimSpeed, newDiv);
 
-    $(".target:last-of-type").on("click", clicked.bind($(".target:last-of-type"), deleteCircle) );
+    $(".target:last-of-type").on("click", clicked.bind($(".target:last-of-type"), deleteCircle) ); // Pass parameter to function using bind
     
     if(speed > limit)
     {
-        speed -= 200;
+        speed -= speedIncrease;
     }
     if(missed > 2){
         $(".target").remove();
+        $("#finishScreen").css("visibility", "visible");
         return;
     }
     setTimeout(createCircle, speed); // Look into changing animation time from js
+    $("#btnBckToTitle").on("click", () => {
+        window.location.href = indexPage;
+    });
 }
 
 function clicked(stopMiss){
@@ -43,10 +50,4 @@ function clicked(stopMiss){
 
 function deleteCircle(myCircleircle){
     myCircle.remove();
-}
-
-function testLoss(stopGame){
-    if(missed > 3){
-        clearTimeout(stopGame);
-    }
 }
