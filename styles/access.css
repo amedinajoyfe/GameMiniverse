@@ -1,0 +1,21 @@
+#loginContainer, #registerContainer{
+    width: 450px;
+    height: 350px;
+    padding: 10px;
+    background-color: rebeccapurple;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+#loginContainer *, #registerContainer *{
+    text-align: center;
+    font-size: 32px;
+}
+#loginContainer h2, #registerContainer h2{
+    font-size: 48px;
+}
