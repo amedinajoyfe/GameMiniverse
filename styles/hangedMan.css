@@ -1,0 +1,47 @@
+html,body { height:100%; }
+header{
+    line-height: 60px;
+    height: 80px;
+}
+#gameZone{
+    display: flex;
+    background-color: aqua;
+    height: calc(100% - 80px);
+}
+#gameZone > div{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+#hangedMan{
+    width: min(30vw, 50vh);
+    height: min(50vw, 90vh);
+    min-width: 250px;
+    min-height: 500px;
+}
+#hangedMan img{
+    width: 100%;
+    height: 100%;
+}
+#keyboard{
+    width: 58vw;
+    height: 400px;
+    background-color: bisque;
+    margin: auto;
+    display: flex;
+}
+
+#word{
+    width: 58vw;
+    height: 100px;
+    background-color: red;
+    margin: auto;
+}
+/* @media (max-width: 840px){
+    body{
+        background-color: black;
+    }
+    #gameZone{
+        flex-direction: column;
+    }
+} */

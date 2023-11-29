@@ -96,6 +96,9 @@ h3, h4, h5, h6, p, label{
     filter: brightness(60%);
 }
 .visible{
+    visibility: visible;
+}
+.hidden{
     visibility: hidden;
 }
 
@@ -153,7 +156,4 @@ h3, h4, h5, h6, p, label{
 #btnBckToTitle{
     background-color: plum;
     border-radius: 10px;
-}
-.hidden{
-    visibility: hidden;
 }

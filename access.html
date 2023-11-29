@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" href="assets/images/GameMinivere_Logo.png" type="image/x-icon">
+    <script src="scripts/JQuery_3.7.1.js" defer></script>
+    <script src="scripts/access.js" defer></script>
     <link rel="stylesheet" href="styles/generalStyles.css">
     <link rel="stylesheet" href="styles/access.css">
 </head>
 <body>
     <div id="pageLogo">
-        <img src="assets/images/GameMinivere_Logo.png" alt="Page logo">
+        <a href="index.html"><img src="assets/images/GameMinivere_Logo.png" alt="Page logo"></a>
         <h1>BIENVENIDO A GAMES MINIVERSE</h2>
     </div>
-    <div id="loginContainer" >
+    <div id="loginContainer">
         <div>    
             <h2>ACCESO</h2>
         </div>
@@ -23,7 +25,7 @@
         <input type="password" name="passLogin" id="passLogin">
         <br>
         <input type="button" value="Acceder">
-        <h4>¿No tienes cuenta? Regístrate</h4>
+        <h4 id="changeToRegister">¿No tienes cuenta? Regístrate</h4>
     </div>
     <div id="registerContainer" class="hidden">
         <div>
@@ -37,11 +39,11 @@
         <input type="password" name="passRegister" id="passRegister">
         <br>
         <label for="termsRegister">
-            <input type="checkbox" name="termsRegister" id="termsRegister"> Acepto los términos y condiciones
+            <input type="checkbox" name="termsRegister" id="termsRegister"> Acepto los <a href="#">términos y condiciones</a>
         </label>
         <br>
         <input type="button" value="Registrarse">
-        <h4>¿Ya tienes cuenta? Inicia sesión</h4>
+        <h4 id="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
     </div>
 </body>
 </html>
