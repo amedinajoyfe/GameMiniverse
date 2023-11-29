@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" href="assets/images/GameMinivere_Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/generalStyles.css">
     <link rel="stylesheet" href="styles/access.css">
 </head>
 <body>
+    <div id="pageLogo">
+        <img src="assets/images/GameMinivere_Logo.png" alt="Page logo">
+        <h1>BIENVENIDO A GAMES MINIVERSE</h2>
+    </div>
     <div id="loginContainer" >
-        <h2>INICIO DE SESIÓN</h2>
-        <br>
+        <div>    
+            <h2>ACCESO</h2>
+        </div>
         <h3>Usuario:</h3>
         <input type="text" name="userLogin" id="userLogin">
         <h3>Contraseña</h3>
         <input type="password" name="passLogin" id="passLogin">
         <br>
         <input type="button" value="Acceder">
+        <h4>¿No tienes cuenta? Regístrate</h4>
     </div>
     <div id="registerContainer" class="hidden">
-        <h2>REGISTRO</h2>
-        <br>
+        <div>
+            <h2>REGISTRO</h2>
+        </div>
         <h3>Usuario:</h3>
         <input type="text" name="userRegister" id="userRegister">
         <h3>Correo:</h3>
@@ -33,6 +41,7 @@
         </label>
         <br>
         <input type="button" value="Registrarse">
+        <h4>¿Ya tienes cuenta? Inicia sesión</h4>
     </div>
 </body>
 </html>

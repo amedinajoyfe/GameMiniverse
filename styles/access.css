@@ -1,21 +1,92 @@
-#loginContainer, #registerContainer{
-    width: 450px;
-    height: 350px;
-    padding: 10px;
-    background-color: rebeccapurple;
+#pageLogo{
+    width: 100%;
+    height: 300px;
     position: absolute;
-    top: 0;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+
+}
+#pageLogo img{
+    width: 200px;
+    height: 200px;
+}
+#loginContainer, #registerContainer{
+    width: 420px;
+    position: absolute;
+    top: 35%;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-radius: 10PX;
+    outline: 2px solid black;
+    background-color: darkgray;
+}
+#loginContainer{
+    height: 350px;
+}
+#registerContainer{
+    height: 470px;
 }
 #loginContainer *, #registerContainer *{
     text-align: center;
-    font-size: 32px;
 }
-#loginContainer h2, #registerContainer h2{
+#loginContainer > div, #registerContainer > div{
     font-size: 48px;
+    background-color: rgb(147, 212, 63);
+    outline: green solid 2px;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+}
+[type="button"]{
+    margin-top: 15px;
+    border-radius: 10px;
+    width: 50%;
+    background-color: rgb(147, 212, 63);
+    border: black solid 2px;
+}
+[type="button"]:hover{
+    background-color: rgb(116, 175, 39);
+    cursor: pointer;
+}
+[type="button"]:active{
+    background-color: rgb(147, 212, 63);
+}
+[type="text"], [type="password"]{
+    width: 90%;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+[type="checkbox"]{
+    margin-top: 10px;
+}
+h1{
+    font-size: min(5vw, 60px);
+}
+h2{
+    font-size: 48px;
+}
+h3, input{
+    font-size: 36px;
+}
+@media (max-height: 730px){
+    h1{
+        visibility: hidden;
+    }
+}
+@media (max-height: 900px){
+    #pageLogo{
+        top: 30px;
+    }
+}
+@media (max-width: 800px){
+    #pageLogo{
+        top: 30px;
+    }
 }
