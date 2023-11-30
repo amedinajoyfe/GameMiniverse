@@ -1,6 +1,6 @@
 header{
     background-color: rgb(147, 212, 63);
-    outline: 5px green solid;
+    outline: 5px rgb(0, 128, 0) solid;
     position: fixed;
     top: 0;
     width: 100%;
@@ -90,7 +90,6 @@ nav > div >div{
     max-width: 25%;
 }
 .game{
-    background-color: red;
     height: 50%;
     border-radius: 10px;
     outline: solid 4px black;
@@ -101,7 +100,7 @@ nav > div >div{
 .gameHeader{
     padding: 5px;
     height: 85px;
-    background-color: blueviolet;
+    background-color: lightskyblue;
     display: flex;
     border-radius: 10px 10px 0 0;
     text-align: center;

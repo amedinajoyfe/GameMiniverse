@@ -123,11 +123,15 @@ h3, h4, h5, h6, p, label{
 .backArrow{
     min-width: 100px;
     height: 50px;
+    transition: 0.1s;
+}
+.backArrow:hover{
+    transform: scale(110%);
 }
 #finishScreen{
     width: 400px;
     height: 250px;
-    background-color: rgb(215, 215, 91);
+    background-color: rgb(179, 223, 135);
     border: 3px dashed black;
     position: absolute;
     top: 0;
@@ -154,6 +158,14 @@ h3, h4, h5, h6, p, label{
     font-size: 38px;
 }
 #btnBckToTitle{
-    background-color: plum;
+    background-color: darkgray;
     border-radius: 10px;
+    transition: 0.1s;
+}
+#btnBckToTitle:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+#btnBckToTitle:active{
+    background-color: darkgray;
 }

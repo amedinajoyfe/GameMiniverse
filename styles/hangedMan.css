@@ -31,6 +31,9 @@ header{
     background-color: bisque;
     margin-left: auto;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #word{
@@ -45,9 +48,36 @@ header{
     margin-left: 4px;
     margin-right: 4px;
 }
-.letter h1{
+.letter h1, .keyboardLetter h1{
     font-size: 48px;
 }
+.keyboardLine{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.keyboardLetter{
+    margin: 6px;
+    width: 50px;
+    border-radius: 10px;
+    border: 2px black solid;
+    background-color: darkgray;
+    height: max-content;
+    display: inline-block;
+    text-align: center;
+    align-self: center;
+}
+.keyboardLetter:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.correct{
+    background-color: lightgreen;
+}
+.wrong{
+    background-color: lightcoral;
+}
+
 /* #wordSpace{
     width: 58vw;
     height: 100px;
