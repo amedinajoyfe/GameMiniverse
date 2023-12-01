@@ -1,10 +1,11 @@
-let points = 0;
-let missed = 0;
-let speed = 2600;
 const limit = 600;
 const speedIncrease = 200;
 const cricleAnimSpeed = 2000;
 const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
+
+let points = 0;
+let missed = 0;
+let speed = 2600;
 
 $(document).ready(() =>  {
     setTimeout(createCircle, speed);  //Mirar setTimeOut vs setInterval para las funciones
