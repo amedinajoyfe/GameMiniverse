@@ -1,12 +1,28 @@
 const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
 
 let currentState = "";
+let dictionary;
 let assistDictionary = ["COCHE", "CASA", "TRAGAPERRAS", "LAGUNA", "MADRE", "ZAPATO", "ELEFANTE", "DRAGON", "JARRA", "HAMSTER", "RADIO", "AZUL", "INTERESANTE", "SILLA", "PARQUE", "REY", "PIE", "SAL", "AMBULANCIA", "ARAÑA"];
 let word = "";
 let stage = 1;
 let puntos = 0;
+let key1Value, key2Value;
 
 $(document).ready(function(){
+    fetch("http://localhost:8080/api-joyfe/v1/GamesMiniverse/testJson")
+      .then( body => {
+        return body.json(); // <--- THIS PART WAS MISSING
+      }).then( data => {
+        console.log(data);
+        key1Value = data.key1;
+        key2Value = data.key2;
+      }).then( () => {
+        console.log("Key 1 Value:", key1Value);
+        console.log("Key 2 Value:", key2Value);
+
+      });
+      
+
     startGame();
     $("#btnBckToTitle").on("click", () => {
         window.location.href = indexPage;
@@ -75,6 +91,7 @@ function buttonAction(event){
         puntos += 1;
         $("#gameInfo h1:first-of-type").text("Puntos: " + puntos);
         alert("Has completado la palabra");
+        $(".keyboardLetter").off("click");
         setTimeout(startGame, 1000);
     }
 }

@@ -96,6 +96,12 @@ nav > div >div{
     margin: 14px 8px;
     height: 20vw;
     min-height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+}
+.game:hover{
+    background-size: 130%;
 }
 .gameHeader{
     padding: 5px;
@@ -108,6 +114,10 @@ nav > div >div{
 .gameHeader h1{
     font-size: min(4vw, 32px);
     margin: auto;
+}
+.gameHeader div img{
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 1500px){
