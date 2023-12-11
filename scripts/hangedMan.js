@@ -1,29 +1,26 @@
 const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
 
 let currentState = "";
-let dictionary;
 let assistDictionary = ["COCHE", "CASA", "TRAGAPERRAS", "LAGUNA", "MADRE", "ZAPATO", "ELEFANTE", "DRAGON", "JARRA", "HAMSTER", "RADIO", "AZUL", "INTERESANTE", "SILLA", "PARQUE", "REY", "PIE", "SAL", "AMBULANCIA", "ARAÑA"];
+let dictionary2 = ["HA", "HU"];
+let dictionary;
 let word = "";
 let stage = 1;
 let puntos = 0;
-let key1Value, key2Value;
 
 $(document).ready(function(){
-    fetch("http://localhost:8080/api-joyfe/v1/GamesMiniverse/testJson")
+    fetch("https://api.generadordni.es/v2/text/words?results=50&words=1") //http://localhost:8080/api-joyfe/v1/GamesMiniverse/testJson
       .then( body => {
-        return body.json(); // <--- THIS PART WAS MISSING
+        return body.json();
       }).then( data => {
-        console.log(data);
-        key1Value = data.key1;
-        key2Value = data.key2;
-      }).then( () => {
-        console.log("Key 1 Value:", key1Value);
-        console.log("Key 2 Value:", key2Value);
-
-      });
-      
-
-    startGame();
+        if(Array.isArray(data)){
+            dictionary = data.slice();
+        }
+        else{
+            dictionary = assistDictionary.slice();
+        }
+        startGame();
+      })
     $("#btnBckToTitle").on("click", () => {
         window.location.href = indexPage;
     });
@@ -49,7 +46,7 @@ function setCharAt(str,index,chr) {
 function startGame(){
     currentState = "";
     stage = 1;
-    word = assistDictionary[Math.floor(Math.random() * assistDictionary.length)];
+    word = dictionary[Math.floor(Math.random() * dictionary.length)];
     for (let index = 0; index < word.length; index++) {
         currentState += "_";
     }
