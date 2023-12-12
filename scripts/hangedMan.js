@@ -9,7 +9,7 @@ let stage = 1;
 let puntos = 0;
 
 $(document).ready(function(){
-    fetch("https://api.generadordni.es/v2/text/words?results=50&words=1") //http://localhost:8080/api-joyfe/v1/GamesMiniverse/testJson
+    fetch("https://api.generadordni.es/v2/text/words?results=50&words=1") //Esta es una api que genera palabras aleatorias, si no las encuentra hace uso del usuario de repuesto
       .then( body => {
         return body.json();
       }).then( data => {
@@ -58,7 +58,7 @@ function startGame(){
     $(".keyboardLetter").on("click", buttonAction);
 
     $("#hangedMan img:first-of-type").attr("src", "assets/images/HangedMan/HangedMan" + stage + ".png");
-    $("#gameInfo h1:last-of-type").text("Fallos: " + (stage - 1)); //Reset visual cues
+    $("#gameInfo h1:last-of-type").text("Fallos: " + (stage - 1) + "/9"); //Reset visual cues
 }
 
 function buttonAction(event){
@@ -76,7 +76,7 @@ function buttonAction(event){
     if(!found){
         event.target.classList.add("wrong");
         stage += 1;
-        $("#gameInfo h1:last-of-type").text("Fallos: " + (stage - 1));
+        $("#gameInfo h1:last-of-type").text("Fallos: " + (stage - 1) + "/9");
         if(stage > 9){
             $("#finishScreen").css("visibility", "visible");
             $(".keyboardLetter").off("click");

@@ -9,6 +9,7 @@ header{
     width: 100%;
 }
 #gameZone > div:first-of-type{
+    width: 650px;
     margin-left: 40px;
     display: flex;
     flex-direction: column;
@@ -25,7 +26,6 @@ header{
     height: 100%;
 }
 #keyboard{
-    width: 58vw;
     height: 400px;
     margin-left: auto;
     display: flex;
@@ -35,7 +35,6 @@ header{
 }
 
 #word{
-    width: 58vw;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -97,3 +96,13 @@ header{
     margin: auto;
     justify-content: center;
 } */
+
+@media(max-width: 990px) {
+    #hangedMan{
+        display: none;
+    }
+
+    #gameZone > div:first-of-type{
+        width: 100%;
+    }
+}
