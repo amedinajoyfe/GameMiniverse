@@ -11,39 +11,43 @@
     <link rel="stylesheet" href="styles/access.css">
 </head>
 <body>
-    <div id="pageLogo">
-        <a href="index.html"><img src="assets/images/GameMinivere_Logo.png" alt="Page logo"></a>
-        <h1>BIENVENIDO A GAMES MINIVERSE</h2>
-    </div>
-    <div id="loginContainer">
-        <div>    
-            <h2>ACCESO</h2>
+    <section>
+        <div id="pageLogo">
+            <a href="index.html"><img src="assets/images/GameMinivere_Logo.png" alt="Page logo"></a>
+            <h1>BIENVENIDO A GAMES MINIVERSE</h2>
         </div>
-        <h3>Usuario:</h3>
-        <input type="text" name="userLogin" id="userLogin">
-        <h3>Contraseña</h3>
-        <input type="password" name="passLogin" id="passLogin">
-        <br>
-        <input type="button" value="Acceder">
-        <h4 id="changeToRegister">¿No tienes cuenta? Regístrate</h4>
-    </div>
-    <div id="registerContainer" class="hidden">
-        <div>
-            <h2>REGISTRO</h2>
+        <div id="loginContainer">
+            <div>    
+                <h2>ACCESO</h2>
+            </div>
+            <h3>Usuario:</h3>
+            <input type="text" name="userLogin" id="userLogin">
+            <h3>Contraseña</h3>
+            <input type="password" name="passLogin" id="passLogin">
+            <br>
+            <input type="button" value="Acceder" id="btnLogin">
+            <h4 class="redText notDisplay" id="errorTextLogin">Error</h4>
+            <h4 id="changeToRegister">¿No tienes cuenta? Regístrate</h4>
         </div>
-        <h3>Usuario:</h3>
-        <input type="text" name="userRegister" id="userRegister">
-        <h3>Correo:</h3>
-        <input type="text" name="emailRegister" id="emailRegister">
-        <h3>Contraseña:</h3>
-        <input type="password" name="passRegister" id="passRegister">
-        <br>
-        <label for="termsRegister">
-            <input type="checkbox" name="termsRegister" id="termsRegister"> Acepto los <a href="#">términos y condiciones</a>
-        </label>
-        <br>
-        <input type="button" value="Registrarse">
-        <h4 id="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
-    </div>
+        <div id="registerContainer" class="notDisplay">
+            <div>
+                <h2>REGISTRO</h2>
+            </div>
+            <h3>Usuario:</h3>
+            <input type="text" name="userRegister" id="userRegister">
+            <h3>Correo:</h3>
+            <input type="text" name="emailRegister" id="emailRegister">
+            <h3>Contraseña:</h3>
+            <input type="password" name="passRegister" id="passRegister">
+            <br>
+            <label for="termsRegister">
+                <input type="checkbox" name="termsRegister" id="termsRegister"> Acepto los <a href="#">términos y condiciones</a>
+            </label>
+            <br>
+            <input type="button" value="Registrarse" id="btnRegister">
+            <h4 class="redText notDisplay" id="errorTextRegister">Error</h4>
+            <h4 id="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
+        </div>
+    </section>
 </body>
 </html>

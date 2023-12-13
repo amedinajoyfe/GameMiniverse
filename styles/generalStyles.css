@@ -39,7 +39,7 @@
     font-weight: bold;
     font-style: italic;
 }
-
+html,body { height:100%; }
 *{
     margin: 0;
     padding: 0;
@@ -95,13 +95,6 @@ h3, h4, h5, h6, p, label{
 .blockedImage{
     filter: brightness(60%);
 }
-.visible{
-    visibility: visible;
-}
-.hidden{
-    visibility: hidden;
-}
-
 .depth0{
     z-index: 0;
 }
@@ -169,4 +162,13 @@ h3, h4, h5, h6, p, label{
 }
 #btnBckToTitle:active{
     background-color: darkgray;
+}
+.redText{
+    color: rgb(175, 0, 0);
+}
+.visible{
+    visibility: visible;
+}
+.hidden{
+    visibility: hidden;
 }

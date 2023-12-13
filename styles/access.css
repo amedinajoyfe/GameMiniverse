@@ -1,38 +1,42 @@
+body{
+    background-color: beige;
+}
+section{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 4%;
+    justify-content: space-between;
+}
 #pageLogo{
     width: 100%;
-    height: 30vh;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
+    height: auto;
     margin: auto;
     text-align: center;
-
 }
 #pageLogo img{
-    width: 20vh;
-    height: 20vh;
+    width: max(20vh, 150px);
+    height: max(20vh, 150px);
+    margin-bottom: 30px;
 }
-#loginContainer, #registerContainer{
-    width: 420px;
-    position: absolute;
-    top: 35%;
-    bottom: 0;
-    left: 0;
-    right: 0;
+[id*="Container"]{
+    width: 400px;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10PX;
+    border-radius: 10px;
     outline: 2px solid black;
     background-color: darkgray;
+    margin-top: 20px;
 }
 #loginContainer{
-    height: 350px;
+    height: auto;
 }
 #registerContainer{
-    height: 490px;
+    height: auto;
 }
 #loginContainer *, #registerContainer *{
     text-align: center;
@@ -67,7 +71,7 @@
     margin-top: 10px;
 }
 h1{
-    font-size: min(5vw, 60px);
+    font-size: 50px;
 }
 h2{
     font-size: 48px;
@@ -75,20 +79,18 @@ h2{
 h3, input{
     font-size: 36px;
 }
+h4{
+    font-size: 16px;
+}
 [id*="changeTo"]:hover, a {
     color: blue;
     cursor: pointer;
 }
-@media (max-height: 730px){
+@media (max-height: 750px){
     h1{
-        visibility: hidden;
+        display: none;
     }
 }
-@media (max-width: 900px){
-    #pageLogo{
-        top: 30px;
-    }
-    #registerContainer{
-        bottom: 40px;
-    }
+.notDisplay{
+    display: none;
 }

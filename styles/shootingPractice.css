@@ -18,8 +18,8 @@ header{
     height: 80px;
 }
 #gameZone{
-    background-color: lightblue;
-    outline: solid 4px blue;
+    background-color: rgb(181, 216, 228);
+    outline: solid 4px rgb(77, 76, 163);
     width: 100%;
     height: calc(100% - 80px);
     position: relative;

@@ -90,18 +90,17 @@ nav > div >div{
     max-width: 25%;
 }
 .game{
-    height: 50%;
     border-radius: 10px;
     outline: solid 4px black;
     margin: 14px 8px;
     height: 20vw;
-    min-height: 300px;
+    min-height: 270px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; 
 }
 .game:hover{
-    background-size: 130%;
+    background-size: auto 110%;
 }
 .gameHeader{
     padding: 5px;
@@ -137,6 +136,7 @@ nav > div >div{
 @media (max-width: 800px) {
     .gamesColumn {
       flex: 100%;
-      max-width: 100%;
+      max-width: 400px;
     }
-  }
+
+}

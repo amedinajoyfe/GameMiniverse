@@ -9,7 +9,7 @@ let stage = 1;
 let puntos = 0;
 
 $(document).ready(function(){
-    fetch("https://api.generadordni.es/v2/text/words?results=50&words=1") //Esta es una api que genera palabras aleatorias, si no las encuentra hace uso del usuario de repuesto
+    fetch("https://api.generadordni.es/v2/text/words?results=50&words=1") //Esta es una api que genera palabras aleatorias, si no las encuentra hace uso del diccionario de repuesto
       .then( body => {
         return body.json();
       }).then( data => {
