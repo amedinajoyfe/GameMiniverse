@@ -1,4 +1,3 @@
-import userSession from './userSession.js';
 const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
 
 $(document).ready(function() {
@@ -21,8 +20,8 @@ function checkLoginValues(){
     if(username == ""){
         message = "Debes completar el nombre de usuario";
     }
-    else if(username.length < 8){
-        message = "El nombre de usuario debe tener como mínimo 8 caracteres";
+    else if(username.length < 4){
+        message = "El nombre de usuario debe tener como mínimo 4 caracteres";
     }
     else if(password == ""){
         message = "Debes completar la contraseña";
@@ -48,15 +47,12 @@ function checkRegisterValues(){
     if(username == ""){
         message = "Debes completar el nombre de usuario";
     }
-    else if(username.length < 8){
-        message = "El nombre de usuario debe tener como mínimo 8 caracteres";
+    else if(username.length < 4){
+        message = "El nombre de usuario debe tener como mínimo 4 caracteres";
     }
-    else if(email == ""){
-        message = "Debes completar el email";
-    }
-    else if(email.length < 8){
-        message = "El email debe tener como mínimo 8 caracteres";
-    }
+    // else if(email.length < 8){
+    //     message = "El email debe tener como mínimo 8 caracteres";
+    // }
     else if(password == ""){
         message = "Debes completar la contraseña";
     }
@@ -76,6 +72,7 @@ function checkRegisterValues(){
 }
 
 function registerUser(_username, _email, _password){
+    let text = $('#errorTextLogin');
     let userData = {
         username: _username,
         email: _email,
@@ -93,7 +90,7 @@ function registerUser(_username, _email, _password){
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        return response.json();
+        setTimeout(() => window.location.reload(), 2000);
     })
     .then(data => {
         console.log(data);
@@ -104,30 +101,32 @@ function registerUser(_username, _email, _password){
 }
 
 function logIn(_username, _password){
-    // fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users", {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(userData),
-    // })
-    // .then(response => {
-    //     if (!response.ok) {
-    //         throw new Error(`HTTP error! Status: ${response.status}`);
-    //     }
-    //     return response.json();
-    // })
-    // .then(data => {
-    //     console.log(data);
-    // })
-    // .catch(error => {
-    //     console.error('Fetch error:', error);
-    // });
-    userSession.username = _username;
-    userSession.loggedIn = true;
-    alert(userSession.username);
-    alert(userSession.loggedIn);
-    window.location.href = indexPage;
+    let text = $('#errorTextLogin');
+    let userData = {
+        username: _username,
+        password: _password,
+    };
+
+    fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/login", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData),
+    })
+    .then(response => {
+        if (!response.ok) {
+            text.text("Usuario y/o contraseña inválidos");
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        localStorage.clear();
+        localStorage.setItem("logId", 1);
+        localStorage.setItem("logName", _username);
+        window.location.href = indexPage;
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
 }
 
 function changeState(value){

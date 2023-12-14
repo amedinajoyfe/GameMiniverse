@@ -166,6 +166,9 @@ h3, h4, h5, h6, p, label{
 .redText{
     color: rgb(175, 0, 0);
 }
+.greenText{
+    color: rgb(21, 112, 33);
+}
 .visible{
     visibility: visible;
 }
