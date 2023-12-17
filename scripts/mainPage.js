@@ -1,10 +1,19 @@
 $(document).ready(function(){
   let user = sessionStorage.getItem("logName");
+  let userID = sessionStorage.getItem("logId");
   if(user != null){
     $("#nombre").text(user);
     $("#blockImage").addClass("hidden");
+    fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users/" + userID + "/highScores")
+    .then( body => {
+      return body.json();
+    }).then( data => {
+      data.forEach(element => {
+        $("#game" + element.gameId).text("Personal score: " + element.score);
+      });
+    })
   }
-})
+});
 
 window.onmousemove = function(e) {
   if (e.target.classList.contains('achievementImage')) {

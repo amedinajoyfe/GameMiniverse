@@ -101,9 +101,12 @@ nav > div >div{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .game:hover{
-    background-size: auto 110%;
+    background-size: auto 140%;
 }
 .gameHeader{
     padding: 5px;
@@ -133,7 +136,7 @@ nav > div >div{
     outline: 2px rgb(0, 128, 0) solid;
     background-color: white;
     filter: brightness(100%);
-    z-index: 100;
+    z-index: 110;
 }
 
 .hiddenText h2{
@@ -145,6 +148,14 @@ nav > div >div{
 
 .achievementImage:hover + .hiddenText {
     opacity: 1;
+}
+
+.highScore{
+    width: fit-content;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 5px;
+    outline: black solid 2px;
 }
 
 @media (max-width: 1500px){

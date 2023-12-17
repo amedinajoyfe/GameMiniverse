@@ -1,9 +1,10 @@
-const limit = 600;
-const speedIncrease = 200;
+const limit = 500;
+const speedIncrease = 150;
 const cricleAnimSpeed = 2000;
 const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
+const gameId = 1;
 
-let points = 0;
+let puntos = 0;
 let missed = 0;
 let speed = 2600;
 
@@ -32,6 +33,8 @@ function createCircle(){
         speed -= speedIncrease;
     }
     if(missed > 2){
+        storeHighScore();
+
         $(".target").remove();
         $("#finishScreen").css("visibility", "visible");
         return;
@@ -43,12 +46,37 @@ function createCircle(){
 }
 
 function clicked(stopMiss){
-    points += 1;
-    $("#points").html("Puntos: " + points);
+    puntos += 1;
+    $("#points").html("Puntos: " + puntos);
     clearTimeout(stopMiss);
     this.remove();
 }
 
 function deleteCircle(myCircleircle){
     myCircle.remove();
+}
+
+function storeHighScore(){
+    if(sessionStorage.getItem("logId") != null){
+        let highscoreBody = {
+            userId:1,
+            score:puntos
+        };
+        fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/" + gameId + "/highScores", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(highscoreBody),
+        })
+        .then(response => {
+            if (!response.ok) {
+                console.log(response.status);
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    }
 }

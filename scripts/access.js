@@ -52,9 +52,6 @@ function checkRegisterValues(){
     else if(username.length < 4){
         message = "El nombre de usuario debe tener como mínimo 4 caracteres";
     }
-    // else if(email.length < 8){
-    //     message = "El email debe tener como mínimo 8 caracteres";
-    // }
     else if(password == ""){
         message = "Debes completar la contraseña";
     }
@@ -89,8 +86,17 @@ function registerUser(_username, _email, _password){
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            if(response.status == 409){
+                $('#errorTextRegister').text("Nombre de usuario ya registrado").removeClass("notDisplay");
+                return;
+            }
+            else{
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
         }
+        $("#btnRegister").off("click"); 
+        $("#btnRegister").addClass("notDisplay");
+        $("#successTextRegister").removeClass("notDisplay");
         setTimeout(() => window.location.reload(), 2000);
     })
     .catch(error => {
@@ -122,9 +128,12 @@ function logIn(_username, _password){
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
         }
+        return response.json();
+    })
+    .then(data => {
         sessionStorage.clear();
-        sessionStorage.setItem("logId", response.id);
-        sessionStorage.setItem("logName", _username);
+        sessionStorage.setItem("logId", data.id);
+        sessionStorage.setItem("logName", data.username);
         window.location.href = indexPage;
     })
     .catch(error => {

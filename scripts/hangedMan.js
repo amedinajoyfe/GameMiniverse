@@ -1,5 +1,5 @@
 const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
-const gameId = 1;
+const gameId = 2;
 
 let currentState = "";
 let assistDictionary = ["COCHE", "CASA", "TRAGAPERRAS", "LAGUNA", "MADRE", "ZAPATO", "ELEFANTE", "DRAGON", "JARRA", "HAMSTER", "RADIO", "AZUL", "INTERESANTE", "SILLA", "PARQUE", "REY", "PIE", "SAL", "AMBULANCIA", "ARAÑA"];
@@ -10,7 +10,7 @@ let stage = 1;
 let puntos = 0;
 
 $(document).ready(function(){
-    fetch("https://api.generadordni.es/v2/text/words?results=50&words=1") //Esta es una api que genera palabras aleatorias, si no las encuentra hace uso del diccionario de repuesto
+    fetch("https://api.generadordni.es/v2/text/words?results=50&words=1&language=es") //Esta es una api que genera palabras aleatorias, si no las encuentra hace uso del diccionario de repuesto
       .then( body => {
         return body.json();
       }).then( data => {
@@ -81,28 +81,7 @@ function buttonAction(event){
         stage += 1;
         $("#gameInfo h1:last-of-type").text("Fallos: " + (stage - 1) + "/9");
         if(stage > 9){
-            if(sessionStorage.getItem("logId") != null){
-                let highscoreBody = {
-                    userId:1,
-                    score:5
-                };
-                fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/1/highScores", {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(highscoreBody),
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        console.log(response.status);
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                })
-                .catch(error => {
-                    console.error('Fetch error:', error);
-                });
-            }
+            storeHighScore();
 
             $("#finishScreen").css("visibility", "visible");
             $(".keyboardLetter").off("click");
@@ -116,5 +95,30 @@ function buttonAction(event){
         alert("Has completado la palabra");
         $(".keyboardLetter").off("click");
         setTimeout(startGame, 1000);
+    }
+}
+
+function storeHighScore(){
+    if(sessionStorage.getItem("logId") != null){
+        let highscoreBody = {
+            userId:1,
+            score:puntos
+        };
+        fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/" + gameId + "/highScores", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(highscoreBody),
+        })
+        .then(response => {
+            if (!response.ok) {
+                console.log(response.status);
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
     }
 }
