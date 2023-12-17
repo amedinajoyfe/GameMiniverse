@@ -1,4 +1,5 @@
 const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
+const gameId = 1;
 
 let currentState = "";
 let assistDictionary = ["COCHE", "CASA", "TRAGAPERRAS", "LAGUNA", "MADRE", "ZAPATO", "ELEFANTE", "DRAGON", "JARRA", "HAMSTER", "RADIO", "AZUL", "INTERESANTE", "SILLA", "PARQUE", "REY", "PIE", "SAL", "AMBULANCIA", "ARAÑA"];
@@ -47,6 +48,8 @@ function startGame(){
     currentState = "";
     stage = 1;
     word = dictionary[Math.floor(Math.random() * dictionary.length)];
+    word = word.toUpperCase();
+    console.log(word);
     for (let index = 0; index < word.length; index++) {
         currentState += "_";
     }
@@ -78,6 +81,29 @@ function buttonAction(event){
         stage += 1;
         $("#gameInfo h1:last-of-type").text("Fallos: " + (stage - 1) + "/9");
         if(stage > 9){
+            if(sessionStorage.getItem("logId") != null){
+                let highscoreBody = {
+                    userId:1,
+                    score:5
+                };
+                fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/1/highScores", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(highscoreBody),
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        console.log(response.status);
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                });
+            }
+
             $("#finishScreen").css("visibility", "visible");
             $(".keyboardLetter").off("click");
             return;

@@ -16,6 +16,7 @@ function checkLoginValues(){
     let text = $('#errorTextLogin');
     let username = $('#userLogin').val();
     let password = $('#passLogin').val();
+    text.removeClass("notDisplay");
 
     if(username == ""){
         message = "Debes completar el nombre de usuario";
@@ -34,7 +35,6 @@ function checkLoginValues(){
         logIn(username, password);
     }
 
-    text.removeClass("notDisplay");
     text.text(message);
 }
 
@@ -44,6 +44,8 @@ function checkRegisterValues(){
     let username = $('#userRegister').val();
     let email = $('#emailRegister').val();
     let password = $('#passRegister').val();
+    text.removeClass("notDisplay");
+
     if(username == ""){
         message = "Debes completar el nombre de usuario";
     }
@@ -67,7 +69,6 @@ function checkRegisterValues(){
         registerUser(username, email, password);
     }
 
-    text.removeClass("notDisplay");
     text.text(message);
 }
 
@@ -92,10 +93,8 @@ function registerUser(_username, _email, _password){
         }
         setTimeout(() => window.location.reload(), 2000);
     })
-    .then(data => {
-        console.log(data);
-    })
     .catch(error => {
+        text.text("Hubo un error inesperado, inténtelo de nuevo más tarde");
         console.error('Fetch error:', error);
     });
 }
@@ -108,23 +107,28 @@ function logIn(_username, _password){
     };
 
     fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/login", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userData),
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData),
     })
     .then(response => {
         if (!response.ok) {
-            text.text("Usuario y/o contraseña inválidos");
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            if (response.status === 401) {
+                text.text("Usuario y/o contraseña inválidos");
+                return;
+            } else {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
         }
-        localStorage.clear();
-        localStorage.setItem("logId", 1);
-        localStorage.setItem("logName", _username);
+        sessionStorage.clear();
+        sessionStorage.setItem("logId", response.id);
+        sessionStorage.setItem("logName", _username);
         window.location.href = indexPage;
     })
     .catch(error => {
+        text.text("Hubo un error inesperado, inténtelo de nuevo más tarde");
         console.error('Fetch error:', error);
     });
 }
