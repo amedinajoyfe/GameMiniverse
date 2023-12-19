@@ -49,6 +49,7 @@ function startGame(){
     stage = 1;
     word = dictionary[Math.floor(Math.random() * dictionary.length)];
     word = word.toUpperCase();
+    word = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     console.log(word);
     for (let index = 0; index < word.length; index++) {
         currentState += "_";
@@ -92,7 +93,6 @@ function buttonAction(event){
     else if(currentState == word){
         puntos += 1;
         $("#gameInfo h1:first-of-type").text("Puntos: " + puntos);
-        alert("Has completado la palabra");
         $(".keyboardLetter").off("click");
         setTimeout(startGame, 1000);
     }
