@@ -13,6 +13,11 @@ $(document).ready(function(){
       });
     })
   }
+  $("#guestLogin").on('click', () =>{
+    sessionStorage.setItem("logName", "Guest");
+    sessionStorage.setItem("logId", 999);
+    location.reload();
+  });
 });
 
 window.onmousemove = function(e) {

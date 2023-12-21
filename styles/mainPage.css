@@ -158,6 +158,10 @@ nav > div >div{
     outline: black solid 2px;
 }
 
+#guestLogin{
+    cursor: pointer;
+}
+
 @media (max-width: 1500px){
     .gamesColumn{
         flex: 33%;
