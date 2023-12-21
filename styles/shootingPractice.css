@@ -17,7 +17,7 @@ header{
     line-height: 60px;
     height: 80px;
 }
-#gameZone{
+section{
     background-color: rgb(181, 216, 228);
     outline: solid 4px rgb(77, 76, 163);
     width: 100%;

@@ -10,6 +10,14 @@ let speed = 2600;
 
 $(document).ready(() =>  {
     setTimeout(createCircle, speed);  //Mirar setTimeOut vs setInterval para las funciones
+
+    $("#btnBckToTitle").on("click", () => {
+        window.location.href = indexPage;
+    });
+
+    $(".backArrow").on("click", () => {
+        storeHighScore();
+    });
 });
 
 function createCircle(){

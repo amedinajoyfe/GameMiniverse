@@ -21,9 +21,15 @@ $(document).ready(function(){
             dictionary = assistDictionary.slice();
         }
         startGame();
-      })
+    });
     $("#btnBckToTitle").on("click", () => {
-        window.location.href = indexPage;
+        let myPromise = new Promise(() => {
+            storeHighScore();
+        });
+        myPromise.then(() => { window.location.href = indexPage;})
+    });
+    $(".backArrow").on("click", () => {
+        storeHighScore();
     });
 })
 
