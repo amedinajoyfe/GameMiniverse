@@ -18,6 +18,7 @@ $(document).ready(function(){
     sessionStorage.setItem("logId", 999);
     location.reload();
   });
+  loadGames();
 });
 
 window.onmousemove = function(e) {
