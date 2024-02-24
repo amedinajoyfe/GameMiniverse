@@ -1,0 +1,140 @@
+@keyframes dotAnimation {
+    0% { opacity: 0; }
+    33.33% { opacity: 1; }
+    66.66% { opacity: 1; }
+    100% { opacity: 0; }
+}
+body{
+    background-color: rgb(211, 234, 255);
+}
+#game {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    justify-content: center;
+}
+.container{
+    align-self: center;
+}
+
+.line{
+    display: flex;
+}
+
+.square{
+    display: flex;
+    outline: black solid 2px;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 15vw;
+    max-width: 150px;
+    max-height: 150px; 
+    background-color: bisque;
+    margin: 10px;
+}
+
+.imageContainer{
+    width: 90%;
+    height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#lobby{
+    width: 30vw;
+    min-width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(179, 223, 135);
+    border: 3px dashed black;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+}
+
+#lobby h2{
+    font-size: 400%;
+    position: absolute;
+    top: 10px;
+}
+
+#btnJoinRoom{
+    background-color: darkgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: 0.1s;
+    width: 70%;
+    font-size: 36px;
+}
+#btnJoinRoom:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+#btnJoinRoom:active{
+    background-color: darkgray;
+}
+#txtRoomCode{
+    width: 90%;
+    border-radius: 10px;
+    font-size: 36px;
+    border: solid black 2px;
+    text-align: center;
+}
+#errorRoomTxt{
+    position: absolute;
+    bottom: 20px;
+}
+
+#waitingSection{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+#waitingSection h1{
+    font-size: 36px;
+}
+#dotContainer{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.dot{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: 10px;
+    background-color: black;
+    animation: dotAnimation 2s infinite;
+}
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 1s;
+}

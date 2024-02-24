@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Player Counter</title>
+    <link rel="stylesheet" href="../../styles/generalStyles.css">
+    <link rel="stylesheet" href="ticTacToe.css">
+</head>
+<body>
+    <header>
+        <div id="gameInfo">
+            <div class="backArrow">
+                <a href="../../index.html"><img src="../../assets/images/BackArrow.png" alt="Back arrow"></a>
+            </div>
+        </div>
+    </header>
+    
+    <section id="lobby">
+        <h2>Código de sala</h2>
+        <input type="text" id="txtRoomCode">
+        <button id="btnJoinRoom">Unirse</button>
+        <h4 class="redText hidden" id="errorRoomTxt">Sala llena</h4>
+    </section>
+
+    <div id="finishScreen">
+        <h1>FIN DE PARTIDA</h1>
+        <h1 id="result">RESULTADO</h1>
+        <input type="button" name="btnBckToTitle" id="btnBckToTitle" value="VOLVER">
+    </div>
+    <section id="game" class="hidden">
+        <div class="container">
+            <div class="line">
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="imageContainer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="waitingSection" class="hidden">
+        <h1>Esperando al otro jugador</h1>
+        <div id="dotContainer">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <script src="https://cdn.socket.io/4.3.1/socket.io.min.js"></script>
+    <script src="../../scripts/JQuery_3.7.1.js"></script>
+    <script src="ticTacToe.js"></script>
+</body>
+</html>
