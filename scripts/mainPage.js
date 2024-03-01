@@ -1,7 +1,8 @@
 $(document).ready(function(){
+  let session = sessionStorage.getItem("session");
   let user = sessionStorage.getItem("logName");
   let userID = sessionStorage.getItem("logId");
-  if(user != null){
+  if(user != null && session == "Web2"){
     $("#nombre").text(user);
     $("#blockImage").addClass("hidden");
     fetch("http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users/" + userID + "/highScores")
@@ -13,12 +14,16 @@ $(document).ready(function(){
       });
     })
   }
+  else if(user != null && session == "Web3")
+  {
+    console.log("Venimos de Web3");
+  }
   $("#guestLogin").on('click', () =>{
     sessionStorage.setItem("logName", "Guest");
     sessionStorage.setItem("logId", 999);
     location.reload();
   });
-  loadGames();
+  //loadGames();
 });
 
 window.onmousemove = function(e) {

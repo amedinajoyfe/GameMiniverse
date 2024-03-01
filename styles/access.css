@@ -31,6 +31,7 @@ section{
     outline: 2px solid black;
     background-color: darkgray;
     margin-top: 20px;
+    text-align: center;
 }
 #loginContainer{
     height: auto;
@@ -41,7 +42,7 @@ section{
 #loginContainer *, #registerContainer *{
     text-align: center;
 }
-#loginContainer > div, #registerContainer > div{
+#loginContainer > div, #registerContainer > div, #registerContainerWeb3 > div{
     font-size: 48px;
     background-color: rgb(147, 212, 63);
     outline: green solid 2px;
@@ -91,7 +92,7 @@ h3, input{
 h4{
     font-size: 16px;
 }
-[id*="changeTo"]:hover, a {
+[class*="changeTo"]:hover, a , #loginEthereum:hover{
     color: blue;
     cursor: pointer;
 }

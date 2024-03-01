@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" href="assets/images/GameMinivere_Logo.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js" defer></script>
     <script src="scripts/JQuery_3.7.1.js" defer></script>
     <script src="scripts/access.js" defer></script>
     <link rel="stylesheet" href="styles/generalStyles.css">
@@ -27,7 +28,8 @@
             <br>
             <input type="button" value="Acceder" id="btnLogin">
             <h4 class="redText notDisplay" id="errorTextLogin">Error</h4>
-            <h4 id="changeToRegister">¿No tienes cuenta? Regístrate</h4>
+            <h4 class="changeToRegister">¿No tienes cuenta? Regístrate</h4>
+            <h4 id="loginEthereum">Accede también con MetaMask</h4>
         </div>
         <div id="registerContainer" class="notDisplay">
             <div>
@@ -47,8 +49,23 @@
             <input type="button" value="Registrarse" id="btnRegister">
             <h4 class="redText notDisplay" id="errorTextRegister">Error</h4>
             <h4 class="greenText notDisplay" id="successTextRegister">Usuario registrado correctamente</h4>
-            <h4 id="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
+            <h4 class="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
+        </div>
+        <div id="registerContainerWeb3" class="notDisplay">
+            <div>
+                <h2>REGISTRO WEB3</h2>
+            </div>
+            <h3>Usuario:</h3>
+            <input type="text" name="userRegister" id="userRegisterWeb3">
+            <label for="termsRegister">
+                <input type="checkbox" name="termsRegister" id="termsRegisterWeb3"> Acepto los <a href="#">términos y condiciones</a>
+            </label>
+            <br>
+            <input type="button" value="Registrarse" id="btnRegisterWeb3">
+            <h4 class="redText notDisplay" id="errorTextRegisterWeb3">Error</h4>
+            <h4 class="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
         </div>
     </section>
+    
 </body>
 </html>

@@ -73,7 +73,7 @@ nav > div >div{
 {
     bottom: -20px;
     left: 0.5vw;
-    width: min(25vw, 250px);
+    width: min(40vw, 250px);
     height: 100px;
     position: fixed;
 }
