@@ -1,0 +1,116 @@
+
+@font-face {
+    font-family: "Balsamic Sans";
+    src: url("../assets/BalsamiqSans-Regular.ttf");
+}
+
+#gameInfo{
+    display: flex;
+    padding: 10px;
+}
+#gameInfo h1{
+    font-size: 40px;
+    margin-left: auto;
+}
+.backArrow{
+    min-width: 100px;
+    height: 50px;
+    transition: 0.1s;
+}
+.backArrow:hover{
+    transform: scale(110%);
+}
+#finishScreen{
+    z-index: 3;
+    width: 400px;
+    height: 250px;
+    background-color: rgb(179, 223, 135);
+    border: 3px dashed black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+}
+#finishScreen h1{
+    display: inline;
+    align-self: center;
+    font-size: 38px;
+}
+#finishScreen input{
+    align-self: center;
+    width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 38px;
+}
+#btnRestart{
+    background-color: darkgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+#btnRestart:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+#btnRestart:active{
+    background-color: darkgray;
+}
+#screenCover{
+    position: absolute;
+    width: 500px;
+    height: 580px;
+    z-index: 1;
+}
+#squareGame{
+    display: flex;
+}
+#red{
+    width: 200px;
+    height: 250px;
+    background-color: rgb(160, 0, 0);
+    border: black solid 4px;
+}
+#green{
+    width: 200px;
+    height: 250px;
+    background-color: rgb(0, 60, 0);
+    border: black solid 4px;
+}
+#blue{
+    width: 200px;
+    height: 250px;
+    background-color: rgb(0, 0, 160);
+    border: black solid 4px;
+}
+#yellow{
+    width: 200px;
+    height: 250px;
+    background-color: rgb(160, 160, 0);
+    border: black solid 4px;
+}
+.color{
+    margin: 20px;
+}
+.brighten {
+    filter: brightness(200%);
+}
+.displayNone{
+    display: none;
+}
+.hidden{
+    visibility: hidden;
+}
+
+input{
+    font-family: "Balsamic Sans" !important;
+}
+h1, h2{
+    font-family: "Balsamic Sans" !important;
+}

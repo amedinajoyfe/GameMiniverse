@@ -1,0 +1,29 @@
+<main class="main">
+  <header>
+    <div id="gameInfo">
+        <h1 id="points">Puntos: 0</h1>
+    </div>
+</header>
+<section style="display: flex; justify-content: center; align-items: center;">
+    <div id="gameZone">
+      <div id="screenCover">
+
+      </div>
+      <div id="squareGame">
+        <div class="line">
+          <div id="red" class="color"></div>
+          <div id="blue" class="color"></div>
+        </div>
+        <div class="line">
+          <div id="green" class="color"></div>
+          <div id="yellow" class="color"></div>
+        </div>
+      </div>
+      <div id="finishScreen" class="hidden">
+          <h1>HAS PERDIDO</h1>
+          <input type="button" name="btnRestart" id="btnRestart" value="REINICIAR">
+      </div>
+    </div>
+</section>
+</main>
+<router-outlet />
