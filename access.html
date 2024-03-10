@@ -8,8 +8,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js" defer></script>
     <script src="scripts/JQuery_3.7.1.js" defer></script>
     <script src="scripts/access.js" defer></script>
-    <link rel="stylesheet" href="styles/generalStyles.css">
+    <link rel="stylesheet" href="styles/bootstrapButtons.css">
     <link rel="stylesheet" href="styles/access.css">
+    <link rel="stylesheet" href="styles/generalStyles.css">
+    <link rel="stylesheet" href="styles/bootstrapForms.css">
 </head>
 <body>
     <section>
@@ -22,11 +24,11 @@
                 <h2>ACCESO</h2>
             </div>
             <h3>Usuario:</h3>
-            <input type="text" name="userLogin" id="userLogin">
+            <input type="text" name="userLogin" id="userLogin" class="form-control">
             <h3>Contraseña</h3>
-            <input type="password" name="passLogin" id="passLogin">
+            <input type="password" name="passLogin" id="passLogin" class="form-control">
             <br>
-            <input type="button" value="Acceder" id="btnLogin">
+            <input type="button" value="Acceder" id="btnLogin" class="btn btn-loginPage">
             <h4 class="redText notDisplay" id="errorTextLogin">Error</h4>
             <h4 class="changeToRegister">¿No tienes cuenta? Regístrate</h4>
             <h4 id="loginEthereum">Accede también con MetaMask</h4>
@@ -36,17 +38,17 @@
                 <h2>REGISTRO</h2>
             </div>
             <h3>Usuario:</h3>
-            <input type="text" name="userRegister" id="userRegister">
+            <input type="text" name="userRegister" id="userRegister" class="form-control">
             <h3>Correo:</h3>
-            <input type="text" name="emailRegister" id="emailRegister">
+            <input type="text" name="emailRegister" id="emailRegister" class="form-control">
             <h3>Contraseña:</h3>
-            <input type="password" name="passRegister" id="passRegister">
+            <input type="password" name="passRegister" id="passRegister" class="form-control">
             <br>
             <label for="termsRegister">
                 <input type="checkbox" name="termsRegister" id="termsRegister"> Acepto los <a href="#">términos y condiciones</a>
             </label>
             <br>
-            <input type="button" value="Registrarse" id="btnRegister">
+            <input type="button" value="Registrarse" id="btnRegister" class="btn btn-loginPage">
             <h4 class="redText notDisplay" id="errorTextRegister">Error</h4>
             <h4 class="greenText notDisplay" id="successTextRegister">Usuario registrado correctamente</h4>
             <h4 class="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
@@ -56,12 +58,12 @@
                 <h2>REGISTRO WEB3</h2>
             </div>
             <h3>Usuario:</h3>
-            <input type="text" name="userRegister" id="userRegisterWeb3">
+            <input type="text" name="userRegister" id="userRegisterWeb3" class="form-control">
             <label for="termsRegister">
                 <input type="checkbox" name="termsRegister" id="termsRegisterWeb3"> Acepto los <a href="#">términos y condiciones</a>
             </label>
             <br>
-            <input type="button" value="Registrarse" id="btnRegisterWeb3">
+            <input type="button" value="Registrarse" id="btnRegisterWeb3" class="btn btn-loginPage">
             <h4 class="redText notDisplay" id="errorTextRegisterWeb3">Error</h4>
             <h4 class="changeToLogin">¿Ya tienes cuenta? Inicia sesión</h4>
         </div>

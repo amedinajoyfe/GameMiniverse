@@ -27,7 +27,7 @@ $(document).ready(function() {
         socket.emit('signPlaced', index, currentRoom, sign);
     });
     $('#btnBckToTitle').click(function() {
-        window.location.href = '../../index.html'; // Replace 'new_page.html' with the URL of the page you want to navigate to
+        window.location.href = 'http://127.0.0.1:5501/index.html';
     });
 });
 
@@ -62,6 +62,13 @@ socket.on('finishedGame', winningSign => {
     else
         $('#result').text("HAS PERDIDO...");
 
+    $("#finishScreen").css("visibility", "visible");
+    $("#waitingSection").css("visibility", "hidden");
+    $("#game").css("visibility", "hidden");
+});
+socket.on('tie', () => {
+    $("#errorRoomTxt").removeClass("hidden");
+    $('#result').text("HABÉIS EMPATADO");
     $("#finishScreen").css("visibility", "visible");
     $("#waitingSection").css("visibility", "hidden");
     $("#game").css("visibility", "hidden");

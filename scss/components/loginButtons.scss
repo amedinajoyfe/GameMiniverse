@@ -1,0 +1,21 @@
+// Define mixin for button styles
+@mixin button-styles {
+    margin-top: 15px;
+    border-radius: 10px;
+    width: 50%;
+    background-color: rgb(147, 212, 63);
+    border: black solid 2px;
+  
+    &:hover {
+      background-color: rgb(116, 175, 39);
+      cursor: pointer;
+    }
+  
+    &:active {
+      background-color: rgb(147, 212, 63);
+    }
+  }
+  
+  [type="button"] {
+    @include button-styles;
+  }

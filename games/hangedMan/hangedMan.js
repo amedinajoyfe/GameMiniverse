@@ -1,9 +1,8 @@
-const indexPage = "http://127.0.0.1:5500/GameMiniverse/index.html";
+const indexPage = "http://127.0.0.1:5501/index.html";
 const gameId = 2;
 
 let currentState = "";
 let assistDictionary = ["COCHE", "CASA", "TRAGAPERRAS", "LAGUNA", "MADRE", "ZAPATO", "ELEFANTE", "DRAGON", "JARRA", "HAMSTER", "RADIO", "AZUL", "INTERESANTE", "SILLA", "PARQUE", "REY", "PIE", "SAL", "AMBULANCIA", "ARAÑA"];
-let dictionary2 = ["HA", "HU"];
 let dictionary;
 let word = "";
 let stage = 1;
@@ -23,13 +22,14 @@ $(document).ready(function(){
         startGame();
     });
     $("#btnBckToTitle").on("click", () => {
-        let myPromise = new Promise(() => {
-            storeHighScore();
-        });
-        myPromise.then(() => { window.location.href = indexPage;})
+        // let myPromise = new Promise(() => {
+        //     //storeHighScore();
+        // });
+        // myPromise.then(() => { window.location.href = indexPage;})
+        window.location.href = indexPage;
     });
     $(".backArrow").on("click", () => {
-        storeHighScore();
+        //storeHighScore();
     });
 })
 
@@ -67,7 +67,7 @@ function startGame(){
     $(".keyboardLetter").off("click"); //Remove remaining clicks and add new ones
     $(".keyboardLetter").on("click", buttonAction);
 
-    $("#hangedMan img:first-of-type").attr("src", "assets/images/HangedMan/HangedMan" + stage + ".png");
+    $("#hangedMan img:first-of-type").attr("src", "../../assets/images/HangedMan/HangedMan" + stage + ".png");
     $("#gameInfo h1:last-of-type").text("Fallos: " + (stage - 1) + "/9"); //Reset visual cues
 }
 
@@ -94,7 +94,7 @@ function buttonAction(event){
             $(".keyboardLetter").off("click");
             return;
         }
-        $("#hangedMan img:first-of-type").attr("src", "assets/images/HangedMan/HangedMan" + stage + ".png");
+        $("#hangedMan img:first-of-type").attr("src", "../../assets/images/HangedMan/HangedMan" + stage + ".png");
     }
     else if(currentState == word){
         puntos += 1;

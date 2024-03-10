@@ -1,7 +1,7 @@
 html,body { height:100%; }
 .target{
     background-color: orangered;
-    background-image: url("../assets/images/target.png");
+    background-image: url("../../assets/images/target.png");
     background-size: contain;
     border-radius: 50%;
     animation: targetAnimation;

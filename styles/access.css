@@ -32,14 +32,9 @@ section{
     background-color: darkgray;
     margin-top: 20px;
     text-align: center;
-}
-#loginContainer{
     height: auto;
 }
-#registerContainer{
-    height: auto;
-}
-#loginContainer *, #registerContainer *{
+#loginContainer *, #registerContainer *, #registerContainerWeb3 *{
     text-align: center;
 }
 #loginContainer > div, #registerContainer > div, #registerContainerWeb3 > div{
@@ -49,7 +44,7 @@ section{
     border-radius: 10px 10px 0px 0px;
     width: 100%;
 }
-[type="button"]{
+/* [type="button"]{
     margin-top: 15px;
     border-radius: 10px;
     width: 50%;
@@ -62,12 +57,12 @@ section{
 }
 [type="button"]:active{
     background-color: rgb(147, 212, 63);
-}
-[type="text"], [type="password"]{
+} */
+/* [type="text"], [type="password"]{
     width: 90%;
     border-radius: 10px;
     border: solid black 2px;
-}
+} */
 [type="checkbox"]{
     margin-top: 10px;
 }

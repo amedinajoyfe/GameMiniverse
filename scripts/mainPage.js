@@ -21,6 +21,7 @@ $(document).ready(function(){
   $("#guestLogin").on('click', () =>{
     sessionStorage.setItem("logName", "Guest");
     sessionStorage.setItem("logId", 999);
+    sessionStorage.setItem("session", "Web2");
     location.reload();
   });
   //loadGames();

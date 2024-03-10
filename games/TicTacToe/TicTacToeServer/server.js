@@ -53,8 +53,15 @@ io.on('connection', (socket) => {
         console.log("Ganador: " + winner);
         if(winner != '-')
         {
-            io.to(currentRoom).emit('finishedGame', winner);
-            roomCounts[currentRoom] = "---------";
+            if(winner == 't')
+            {
+                io.to(currentRoom).emit('tie');
+            }
+            else
+            {
+                io.to(currentRoom).emit('finishedGame', winner);
+                roomCounts[currentRoom] = "---------";
+            }
         }
     });
 
@@ -70,6 +77,19 @@ server.listen(port, () => {
 });
 
 function checkWinner(board) {
+    let checkTie = true;
+    for(let i = 0; i < 9; i ++)
+    {
+        if(board[i] == '-')
+        {
+            checkTie = false;
+        }
+    }
+    if(checkTie)
+    {
+        return 't';
+    }
+
     const winningCombinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -82,5 +102,5 @@ function checkWinner(board) {
             return board[a];
         }
     }
-    return null;
+    return '-';
 }
