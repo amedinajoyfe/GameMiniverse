@@ -16,6 +16,8 @@ $(document).ready(function(){
   }
   else if(user != null && session == "Web3")
   {
+    let user = sessionStorage.getItem("logName");
+    $("#nombre").text(user);
     console.log("Venimos de Web3");
   }
   $("#guestLogin").on('click', () =>{

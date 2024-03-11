@@ -1,6 +1,6 @@
 const indexPage = "http://127.0.0.1:5501/index.html";
 // Token https://sepolia.etherscan.io/tx/0x6f6d0bbfd92493682ce17197d1ba20f30f9b475ed095fa93955d0a0a7e454379
-const contractAddress = "0x75c674C9f0442fbdE8C38477eEec465B0A202a8e";
+const contractAddress = "0x14d95F11Ed4e2297B98b7a587a90774b2f6D1c05";
 const abi = [
 	{
 		"inputs": [
@@ -100,6 +100,11 @@ const abi = [
 				"internalType": "uint256",
 				"name": "_id",
 				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
 			}
 		],
 		"name": "addAchievement",
@@ -164,25 +169,6 @@ const abi = [
 				"type": "address"
 			}
 		],
-		"name": "findUser",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			}
-		],
 		"name": "findUserName",
 		"outputs": [
 			{
@@ -200,6 +186,11 @@ const abi = [
 				"internalType": "uint256",
 				"name": "_id",
 				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
 			}
 		],
 		"name": "getGameScore",
@@ -234,11 +225,6 @@ const abi = [
 						"internalType": "string",
 						"name": "username",
 						"type": "string"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "highScoreReferences",
-						"type": "uint256[]"
 					}
 				],
 				"internalType": "struct GamesMiniverse.User",
@@ -268,11 +254,6 @@ const abi = [
 				"internalType": "string",
 				"name": "_username",
 				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_registeredUser",
-				"type": "address"
 			}
 		],
 		"name": "registerNewUser",
@@ -311,7 +292,7 @@ const abi = [
 		"stateMutability": "pure",
 		"type": "function"
 	}
-]
+];
 let web3;
 let contract;
 let accounts;
@@ -331,15 +312,22 @@ $(document).ready(function() {
                 await window.ethereum.request({ method: 'eth_requestAccounts' });
                 accounts = await web3.eth.getAccounts();
                 if (accounts.length > 0) {
+					const address = accounts[0];
+					const message = "Login to MyWebsite";
+					console.log("Pre login");
+                	const signature = await web3.eth.personal.sign(message, address, "");
+					console.log("Post login");
                     contract = new web3.eth.Contract(abi, contractAddress);
-                    const result = await contract.methods.loginAttempt(accounts[0]).call();
-                    console.log(result);
+					console.log("Post contract");
+                    const result = await contract.methods.loginAttempt(address).call();
+					console.log("Post result");
+					console.log(await result);
                     if (result[1] == "") {
                         $("#registerContainerWeb3").removeClass("notDisplay");
                         $('#loginContainer').addClass("notDisplay");
                         clearInputs();
                     } else {
-                        logInWeb3(result[1], accounts[0]);
+                        logInWeb3(result[1], address);
                     }
                 } else {
                     console.log('No account connected');
