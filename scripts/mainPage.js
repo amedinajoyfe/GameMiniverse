@@ -17,7 +17,9 @@ $(document).ready(function(){
   else if(user != null && session == "Web3")
   {
     let user = sessionStorage.getItem("logName");
+    let tokenAmount = sessionStorage.getItem("tokens");
     $("#nombre").text(user);
+    $("#tokens").text("Tokens: " + tokenAmount);
     console.log("Venimos de Web3");
   }
   $("#guestLogin").on('click', () =>{

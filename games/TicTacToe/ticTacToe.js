@@ -27,7 +27,7 @@ $(document).ready(function() {
         socket.emit('signPlaced', index, currentRoom, sign);
     });
     $('#btnBckToTitle').click(function() {
-        window.location.href = 'http://127.0.0.1:5501/index.html';
+        window.location.href = 'http://127.0.0.1:5502/index.html';
     });
 });
 

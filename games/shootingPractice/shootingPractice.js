@@ -1,7 +1,7 @@
 const limit = 500;
 const speedIncrease = 150;
 const cricleAnimSpeed = 2000;
-const indexPage = "http://127.0.0.1:5501/index.html";
+const indexPage = "http://127.0.0.1:5502/index.html";
 const gameId = 1;
 
 let puntos = 0;
