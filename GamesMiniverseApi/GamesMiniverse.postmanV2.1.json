@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "31d7abad-c6de-484a-b6d7-058a65dcd848",
+		"name": "GamesMiniverse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29854497"
+	},
+	"item": [
+		{
+			"name": "Inserts",
+			"item": [
+				{
+					"name": "Insert User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Medina2\",\r\n    \"email\":\"medina2@correo.es\",\r\n    \"password\":\"123769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Game",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test Game\",\r\n    \"creatorId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Achievement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ganar una partida\",\r\n    \"description\":\"Gana una partida al juego 'TicTacToe'\",\r\n    \"gameId\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/achievements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"achievements"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gets",
+			"item": [
+				{
+					"name": "Get Achievements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/achievements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"achievements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific achievement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/achievements/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"achievements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Game Achievements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/1/achievements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"games",
+								"1",
+								"achievements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific Game",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"games",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Creator Games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users/1/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"users",
+								"1",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Updates",
+			"item": [
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Medina 3\",\r\n    \"email\":\"medina2@correo.es\",\r\n    \"password\":\"123769\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Game",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"NewName\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"games",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Achievement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"25 disparos\",\r\n    \"description\":\"Consigue 25 disparos en 'Shooting practice'\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/achievements/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"achievements",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deletes",
+			"item": [
+				{
+					"name": "Delete Achievement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/achievements/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"achievements",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Game",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/games/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"games",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-gamesMiniverse",
+								"v1",
+								"GamesMiniverse",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LogIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"medina@correo.es\",\r\n    \"password\":\"123769\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api-gamesMiniverse/v1/GamesMiniverse/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api-gamesMiniverse",
+						"v1",
+						"GamesMiniverse",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
